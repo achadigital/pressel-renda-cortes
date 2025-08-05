@@ -2,38 +2,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Renda com Cortes - Mide Digital</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; margin: 0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #222; font-size: 28px; }
-        h2 { font-size: 20px; color: #555; }
-        p { margin-bottom: 20px; }
-        .button { display: inline-block; background: #0070f3; color: #fff; padding: 15px 25px; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background 0.3s; }
-        .button:hover { background: #0059c1; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Renda com Cortes - Mide Digital</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  .container {
+    max-width: 800px;
+    margin: 120px auto 40px;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  h1 {
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+  ul {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  ul li::before {
+    content: "✓";
+    color: #0070f3;
+    font-weight: bold;
+    margin-right: 10px;
+    position: absolute;
+    left: -18px;
+    top: 0;
+  }
+  a.button {
+    display: inline-block;
+    background: #0070f3;
+    color: #fff;
+    padding: 16px 28px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  a.button:hover {
+    background: #0059c1;
+  }
+  #cookiePopup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 15px;
+    z-index: 9999;
+  }
+  #cookiePopup p {
+    margin: 0;
+    flex: 1;
+    padding-right: 10px;
+    color: #333;
+  }
+  #cookiePopup button, #cookiePopup a {
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  #cookiePopup button:hover, #cookiePopup a:hover {
+    background: #0059c1;
+  }
+  #cookieClose {
+    background: transparent;
+    color: #777;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Descubra Como Pessoas Comuns Estão Faturando com Vídeos de Outros Criadores no Instagram e YouTube</h1>
-        <h2>Sem aparecer, sem experiência com edição e usando apenas o celular. Um método que viralizou no Brasil — veja como funciona.</h2>
-        <p>Você provavelmente já se deparou com aqueles vídeos curtos de cortes de podcasts e entrevistas que aparecem no Instagram, TikTok ou YouTube. O que muita gente não sabe é que <strong>tem pessoas ganhando dinheiro todos os dias apenas repostando esse tipo de conteúdo — legalmente</strong>.</p>
-        <p>Foi justamente isso que o criador do método “Renda com Cortes” descobriu:</p>
-        <p><em>“Eu vi gente fazendo isso, fui atrás de aprender, testei e comecei a fazer dinheiro. Agora ensino tudo passo a passo, mesmo pra quem nunca editou um vídeo na vida.”</em></p>
-        <p>Hoje, esse método já ajudou milhares de pessoas a <strong>gerar uma renda extra ou até viver disso</strong>.</p>
-        <ul>
-            <li>✅ Como encontrar os vídeos certos</li>
-            <li>✅ Como editar cortes no celular (ou grátis no computador)</li>
-            <li>✅ Como postar com consistência</li>
-            <li>✅ Como ativar a monetização de forma simples</li>
-            <li>✅ E como usar inteligência artificial para agilizar o processo</li>
-        </ul>
-        <p><strong>Tudo isso sem precisar aparecer e com suporte da equipe.</strong></p>
-        <p style="text-align: center;">
-            <a class="button" href="SEU_LINK_DE_AFILIADO_AQUI" target="_blank">🔽 Quero Acessar o Método Agora »</a>
-        </p>
-    </div>
+
+<div id="cookiePopup">
+  <p>Este site usa cookies para melhorar sua experiência. Quer acessar o método agora?</p>
+  <a href="https://app.kirvano.com/affiliate/97437e7c-b83d-45f4-8076-8278aff86169" target="_blank" rel="noopener" id="cookieAccept">Sim, quero acessar!</a>
+  <button id="cookieClose" aria-label="Fechar popup">&times;</button>
+</div>
+
+<div class="container" id="presselContent">
+  <h1>Descubra Como Pessoas Comuns Estão Faturando com Vídeos de Outros Criadores no Instagram e YouTube</h1>
+  <h2>Sem aparecer, sem experiência com edição e usando apenas o celular. Um método que viralizou no Brasil — veja como funciona.</h2>
+  <p>Você provavelmente já se deparou com aqueles vídeos curtos de cortes de podcasts e entrevistas que aparecem no Instagram, TikTok ou YouTube. O que muita gente não sabe é que <strong>tem pessoas ganhando dinheiro todos os dias apenas repostando esse tipo de conteúdo — legalmente</strong>.</p>
+  <p>Foi justamente isso que o criador do método “Renda com Cortes” descobriu:</p>
+  <p><em>“Eu vi gente fazendo isso, fui atrás de aprender, testei e comecei a fazer dinheiro. Agora ensino tudo passo a passo, mesmo pra quem nunca editou um vídeo na vida.”</em></p>
+  <p>Hoje, esse método já ajudou milhares de pessoas a <strong>gerar uma renda extra ou até viver disso</strong>.</p>
+  <ul>
+    <li>✅ Como encontrar os vídeos certos</li>
+    <li>✅ Como editar cortes no celular (ou grátis no computador)</li>
+    <li>✅ Como postar com consistência</li>
+    <li>✅ Como ativar a monetização de forma simples</li>
+    <li>✅ E como usar inteligência artificial para agilizar o processo</li>
+  </ul>
+  <p><strong>Tudo isso sem precisar aparecer e com suporte da equipe.</strong></p>
+  <p style="text-align: center;">
+    <a class="button" href="https://app.kirvano.com/affiliate/97437e7c-b83d-45f4-8076-8278aff86169" target="_blank" rel="noopener">🔽 Quero Acessar o Método Agora »</a>
+  </p>
+</div>
+
+<script>
+  const popup = document.getElementById('cookiePopup');
+  const closeBtn = document.getElementById('cookieClose');
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
