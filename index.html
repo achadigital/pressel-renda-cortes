@@ -1,152 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Renda com Cortes - Mide Digital</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 0;
-      color: #222;
-    }
-    .container {
-      max-width: 800px;
-      margin: 80px auto;
-      background: #ffffff;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #003366;
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-    h2 {
-      color: #444;
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
-    p {
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-    ul {
-      padding-left: 20px;
-      margin-bottom: 25px;
-    }
-    ul li {
-      margin-bottom: 12px;
-    }
-    ul li::before {
-      content: "✔";
-      color: #0070f3;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    a.button {
-      display: inline-block;
-      background: #0070f3;
-      color: white;
-      padding: 16px 30px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-top: 15px;
-    }
-    a.button:hover {
-      background: #0052a3;
-    }
-    #cookiePopup {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      background: #e9f1fb;
-      border: 2px solid #0070f3;
-      padding: 15px 20px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 500px;
-      margin: 0 auto;
-      font-size: 15px;
-      z-index: 9999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    #cookiePopup p {
-      margin: 0;
-      flex: 1;
-      padding-right: 12px;
-      color: #222;
-    }
-    #cookiePopup button, #cookiePopup a {
-      background: #0070f3;
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 15px;
-    }
-    #cookiePopup button:hover, #cookiePopup a:hover {
-      background: #0052a3;
-    }
-    #cookieClose {
-      background: transparent;
-      color: #555;
-      font-size: 22px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      margin-left: 15px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Renda com Cortes - Mide Digital</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #222; }
+        .container { max-width: 800px; margin: 80px auto; background: #ffffff; padding: 40px 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        h1 { color: #003366; font-size: 30px; margin-bottom: 15px; text-align: center; }
+        h2 { color: #444; font-size: 22px; margin-bottom: 25px; text-align: center; }
+        p { margin-bottom: 20px; line-height: 1.7; text-align: justify; }
+        ul { padding-left: 20px; margin-bottom: 25px; }
+        ul li { margin-bottom: 12px; font-size: 16px; }
+        ul li::before { content: "✔"; color: #0070f3; font-weight: bold; margin-right: 8px; }
+        a.button { display: block; background: #0070f3; color: white; padding: 16px 30px; font-size: 18px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: 0.3s; margin-top: 15px; text-align: center; }
+        a.button:hover { background: #0052a3; }
+        #cookiePopup { position: fixed; bottom: 20px; left: 20px; right: 20px; background: #e9f1fb; border: 2px solid #0070f3; padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; max-width: 500px; margin: 0 auto; font-size: 15px; z-index: 9999; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        #cookiePopup p { margin: 0; flex: 1; padding-right: 12px; color: #222; }
+        #cookiePopup button, #cookiePopup a { background: #0070f3; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; font-size: 15px; }
+        #cookiePopup button:hover, #cookiePopup a:hover { background: #0052a3; }
+        #cookieClose { background: transparent; color: #555; font-size: 22px; font-weight: bold; border: none; cursor: pointer; margin-left: 15px; }
+    </style>
 </head>
 <body>
 
 <div id="cookiePopup">
-  <p>Este site usa cookies para melhorar sua experiência. Deseja acessar agora?</p>
-  <a href="https://pay.kirvano.com/87886465-361e-4da3-98ee-f88e0960cbf4?aff=d57b8123-008c-432a-af85-91a4b2c51554" target="_blank" rel="noopener" id="cookieAccept">Acessar Agora</a>
-  <button id="cookieClose" aria-label="Fechar popup">&times;</button>
+    <p>Aviso: Você está prestes a ser redirecionado para uma página com conteúdo exclusivo. Deseja continuar?</p>
+    <a href="https://pay.kirvano.com/87886465-361e-4da3-98ee-f88e0960cbf4?aff=d57b8123-008c-432a-af85-91a4b2c51554" target="_blank" rel="noopener" id="cookieAccept">Sim, Continuar</a>
+    <button id="cookieClose" aria-label="Fechar popup">&times;</button>
 </div>
 
 <div class="container">
-  <h1>Transforme Vídeos de Outros Criadores em Renda com Apenas o Celular</h1>
-  <h2>Descubra o método que viralizou entre iniciantes e já gerou resultados reais sem aparecer e sem complicação.</h2>
+    <h1>Transforme Vídeos de Outros Criadores em Renda com Apenas o Celular</h1>
+    <h2>Descubra o método que viralizou entre iniciantes e já gerou resultados reais sem aparecer e sem complicação.</h2>
 
-  <p>Você já viu vídeos curtos de podcasts ou entrevistas bombando nas redes. O criador do método <strong>“Renda com Cortes”</strong> entendeu como monetizar isso — e agora ensina passo a passo como qualquer pessoa pode aplicar:</p>
+    <p style="text-align: center; font-size: 16px; color: #555;">
+        <strong style="color: #0070f3;">+ de 10.000 alunos</strong> já aplicam o método com sucesso!
+    </p>
 
-  <ul>
-    <li>Encontrar vídeos prontos que podem ser reutilizados legalmente</li>
-    <li>Editar cortes direto do celular ou usando ferramentas gratuitas</li>
-    <li>Postar nos horários certos e com as tags corretas</li>
-    <li>Ativar monetização e criar uma renda constante</li>
-    <li>Usar IA para automatizar partes do processo</li>
-  </ul>
+    <p style="text-align: justify;">Você já viu vídeos curtos de podcasts ou entrevistas bombando nas redes. O criador do método <strong>“Renda com Cortes”</strong> entendeu como monetizar isso — e agora ensina passo a passo como qualquer pessoa pode aplicar:</p>
 
-  <p>Mesmo sem aparecer e sem experiência anterior. Tudo explicado de forma simples.</p>
+    <ul>
+        <li>✔ **GANHE DINHEIRO** transformando vídeos de terceiros em cortes virais;</li>
+        <li>✔ **APRENDA** a editar vídeos direto do seu celular, de forma simples e rápida;</li>
+        <li>✔ **USE I.A.** para otimizar e automatizar todo o seu trabalho;</li>
+        <li>✔ **NÃO PRECISA APARECER** e não exige nenhuma experiência anterior;</li>
+        <li>✔ **APROVEITE** os vídeos prontos para reutilizar legalmente nas redes sociais.</li>
+    </ul>
 
-  <p style="text-align: center;">
-    <a class="button" href="https://pay.kirvano.com/87886465-361e-4da3-98ee-f88e0960cbf4?aff=d57b8123-008c-432a-af85-91a4b2c51554" target="_blank" rel="noopener">🔽 Acessar o Método Agora »</a>
-  </p>
+    <p style="text-align: center; color: #d9534f; font-weight: bold; font-size: 16px; margin-bottom: 5px;">
+        Vagas limitadas. Acesse antes que a oferta acabe.
+    </p>
+
+    <p style="text-align: center;">
+        <a class="button" href="https://pay.kirvano.com/87886465-361e-4da3-98ee-f88e0960cbf4?aff=d57b8123-008c-432a-af85-91a4b2c51554" target="_blank" rel="noopener">🔽 Acessar o Método Agora »</a>
+    </p>
 </div>
 
 <script>
-  const popup = document.getElementById('cookiePopup');
-  const closeBtn = document.getElementById('cookieClose');
+    const popup = document.getElementById('cookiePopup');
+    const closeBtn = document.getElementById('cookieClose');
 
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
 </script>
 
 </body>
